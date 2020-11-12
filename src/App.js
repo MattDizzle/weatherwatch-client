@@ -1,14 +1,15 @@
+import React, { Component } from 'react'
 import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header>
-        <h1>Weather Watch</h1>
-      </header>
-     
-    </div>
-  );
+export default class App extends Component {
+  componentDidMount(req,res,next ){
+    
+  }
+  render() {
+    return (
+      <div>
+        
+      </div>
+    )
+  }
 }
 
-export default App;
