@@ -6,43 +6,93 @@ export default class App extends Component {
     super(props);
     this.state = {
       data: {},
+      city: { value: "", touched: false },
+      province: { value: "", touched: false },
+      zipcode: { value: "", touched: false },
     };
   }
 
-  city = "rialto";
-  province = "california";
-  zipcode = "92376";
+  updateCity(user_email) {
+    this.setState({ city: { value: user_email, touched: true } });
+  }
 
-  getData() {
-    console.log(this.city, this.province);
+  updateProvince(province) {
+    this.setState({ province: { value: province, touched: true } });
+  }
+
+  updateZipcode(zipcode) {
+    this.setState({ zipcode: { value: zipcode, touched: true } });
+  }
+
+  getDataByCityAndState = (ev) => {
+    ev.preventDefault();
+    const { city, prov } = ev.target;
+    console.log(this.state.city, this.state.province);
+    console.log("targets--", city.value, prov.value);
     fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${this.city},${this.province}&appid=d1af8402c8f946b3ad0e892bbf7749b4`
+      `https://api.openweathermap.org/data/2.5/weather?q=${city.value},${prov.value}&appid=d1af8402c8f946b3ad0e892bbf7749b4`
     )
       .then((res) => {
-        return res.json();
+        this.setState({ data: res });
       })
       .then((res) => {
-        this.setState({ data: res });
-        // this.setState({ todaysWeather: res.weather[0] });
+        return res.json();
       });
-  }
 
-  componentDidMount() {
-    this.getData();
-  }
+    console.log("BIGDATAAA:", this.state.data);
+  };
+
+  getDataByZip = (ev) => {
+    ev.preventDefault();
+    const { zip } = ev.target;
+    console.log(this.state.zipcode);
+    console.log("targets--", zip.value);
+    fetch(
+      `https://api.openweathermap.org/data/2.5/weather?zip=${zip.value}&appid=d1af8402c8f946b3ad0e892bbf7749b4`
+    )
+      .then((res) => {
+        this.setState({ data: res });
+      })
+      .then((res) => {
+        return res.json();
+      });
+
+    console.log("BIGDATAAA:", this.state.data);
+  };
 
   render() {
     console.log(this.state.data.main);
+
     return (
       <div className="App">
         <Header />
-        {/* <h1>{this.state.data.name}</h1> */}
-        <form onSubmit={this.getData}>
-          <label>Enter a city, state </label>
-          <input type="text"></input>
+        <h1>{this.state.data.name}</h1>
+        <form onSubmit={this.getDataByCityAndState}>
+          <label>Enter a city </label>
+          <input
+            id="city"
+            name="city"
+            type="text"
+            onChange={(e) => this.updateCity(e.target.value)}
+          />
+          <label>and State/Province </label>
+          <input
+            id="prov"
+            name="prov"
+            type="text"
+            onChange={(e) => this.updateProvince(e.target.value)}
+          />
+          <input type="submit" />
+        </form>
 
+        <form onSubmit={this.getDataByZip}>
           <label>or zipcode </label>
-          <input id="zip" name="zip" type="text" inputmode="numeric" pattern="^(?(^00000(|-0000))|(\d{5}(|-\d{4})))$" />
+          <input
+            id="zip"
+            name="zip"
+            type="text"
+            onChange={(e) => this.updateZipcode(e.target.value)}
+          />
           <input type="submit" />
         </form>
       </div>
