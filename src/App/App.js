@@ -27,19 +27,15 @@ export default class App extends Component {
   getDataByCityAndState = (ev) => {
     ev.preventDefault();
     const { city, prov } = ev.target;
-    console.log(this.state.city, this.state.province);
-    console.log("targets--", city.value, prov.value);
     fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${city.value},${prov.value}&appid=d1af8402c8f946b3ad0e892bbf7749b4`
     )
       .then((res) => {
-        this.setState({ data: res });
+        return res.json();
       })
       .then((res) => {
-        return res.json();
+        this.setState({ data: res });
       });
-
-    console.log("BIGDATAAA:", this.state.data);
   };
 
   getDataByZip = (ev) => {
@@ -51,22 +47,21 @@ export default class App extends Component {
       `https://api.openweathermap.org/data/2.5/weather?zip=${zip.value}&appid=d1af8402c8f946b3ad0e892bbf7749b4`
     )
       .then((res) => {
-        this.setState({ data: res });
+        return res.json();
       })
       .then((res) => {
-        return res.json();
+        this.setState({ data: res });
       });
-
-    console.log("BIGDATAAA:", this.state.data);
   };
 
   render() {
-    console.log(this.state.data.main);
-
+    let main = this.state.data["main"];
+    console.log(main);
     return (
       <div className="App">
         <Header />
-        <h1>{this.state.data.name}</h1>
+        <h2> Visibility: {this.state.data.visibility} </h2>
+        <h2>City: {this.state.data.name}</h2>
         <form onSubmit={this.getDataByCityAndState}>
           <label>Enter a city </label>
           <input
