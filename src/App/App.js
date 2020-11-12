@@ -54,9 +54,12 @@ export default class App extends Component {
       });
   };
 
+  
+
   render() {
     let main = this.state.data["main"];
     console.log(main);
+    console.log(this.state.data)
     return (
       <div className="App">
         <Header />
