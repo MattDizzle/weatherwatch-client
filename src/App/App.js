@@ -126,7 +126,7 @@ export default class App extends Component {
     const { speed, deg, gust } = this.state.data.wind;
     const { country, sunrise, sunset } = this.state.data.sys;
     // console.log(moment(sunrise).hours() + ":" + moment(sunrise).minutes());
-    console.log(country);
+    console.log(sunrise);
     return (
       <div className="App ">
         <header>
@@ -193,7 +193,6 @@ export default class App extends Component {
               />
               <button type="submit" class="btn">
                 <span>Submit</span>
-                <div class="sun"></div>
               </button>
             </form>
 
@@ -208,7 +207,6 @@ export default class App extends Component {
 
               <button type="submit" class="btn">
                 <span>Submit</span>
-                <div class="sun"></div>
               </button>
             </form>
           </div>
