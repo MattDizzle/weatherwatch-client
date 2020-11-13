@@ -153,14 +153,8 @@ export default class App extends Component {
                 </div>
 
                 <div className="sub-temps">
-                  Sunrise:{" "}
-                  {moment(sunrise).hours() +
-                    1 +
-                    ":" +
-                    moment(sunrise).minutes()}
-                  <span>am</span> | Sunset:{" "}
-                  {moment(sunset).hours() - 1 + ":" + moment(sunset).minutes()}
-                  <span>pm</span>
+                  Forecast: {main}| Pressure: {pressure}
+                  <span>inHg</span>
                 </div>
 
                 <div className="sub-temps">
