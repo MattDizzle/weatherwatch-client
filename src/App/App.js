@@ -190,7 +190,7 @@ export default class App extends Component {
                 type="text"
                 onChange={(e) => this.updateProvince(e.target.value)}
               />
-              <button type="submit" class="button container">
+              <button type="submit" class="btn">
                 <span>Submit</span>
                 <div class="sun"></div>
                 </button>
@@ -205,7 +205,7 @@ export default class App extends Component {
                 onChange={(e) => this.updateZipcode(e.target.value)}
               />
 
-              <button type="submit" class="button container">
+              <button type="submit" class="btn">
                 <span>Submit</span>
                 <div class="sun"></div>
                 </button>        

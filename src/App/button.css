@@ -1,55 +1,46 @@
 /* $body-bg: linear-gradient(180deg, #1c0138 0%, #2c0055 100%);
 $border: linear-gradient(180deg, #ffdc2a 0%, #fb2182 41.54%); */
-@import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
 
-body {
-  background: linear-gradient(180deg, #1c0138 0%, #2c0055 100%)
-}
-
-.sun {
-  position: relative;
-}
-
-.container {
-  width: 20vw;
+.btn{
+  box-shadow: 0px 0px 36px #c80de0;
+  transition: all 1s ease-in-out;
+  width: 100%;
   align-self: center;
   margin-top: 25px;
-  
+  background: #2c0055;
+  height: 80px;
 }
 
-button:hover .sun {
+.btn:hover .sun {
   bottom: 120px;
   transition: all 1s ease-in-out;
   background: linear-gradient(180deg, #ffdc2a 0%, #fb2182 41.54%);
-  box-shadow: 0px 0px 36px #ff782a;
+  box-shadow: 0px 0px 36px #ffc62a;
 }
   
-.button {
-  box-shadow: 0px 0px 36px #c80de0;
-  transition: all 1s ease-in-out;
-}
-
 .sun {
+  position: relative;
   width: 64px;
   height: 64px;
   left:200px;
   bottom: 60px;
-  background: linear-gradient(180deg, #ffdc2a 0%, #fb9c21, #fb216a 41.54%);
-  box-shadow: 0px 0px 36px #ffdc2a;
-  z-index: -1;
+  background: linear-gradient(180deg, #ffdc2a 0%, #fb9c21, #fb9c21  41.54%);
+  box-shadow: 0px 0px 36px #ff7f2a;
+  z-index: 1;
   border-radius: 65px;
   transition: all 1s ease-in-out;
   visibility: hidden;
 }
     
 .button {
+  display: flex;
   width: 100%;
   height: 65px;
   background: #2c0055;
   box-shadow: 0px 0px 16px #c80de0;
   border-radius: 2px;
-  z-index: 5;
+  z-index: 2;
   border: 2px solid;
   transition: all 1s ease-in-out;
   border-image: linear-gradient(#360154, #d442d5) 30;
