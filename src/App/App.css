@@ -11,12 +11,11 @@
   background: linear-gradient(#ffdc2a,#5FC9F6,#594796,#2c0055);
   display: flex;
   flex-direction: column;
-  align-items: center;
   font-size: 1.4rem;
   color: white;
   min-height: 100vh;
   height: 100%;
-  padding-bottom: 10vh;
+  padding-bottom: 5vh;
   font-family: 'Nova Square', cursive;
 
 }
@@ -46,9 +45,10 @@ h3 {
 form{
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 95%;
   align-self: center;
-
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .logo {
@@ -85,6 +85,11 @@ label {
   font-size: 1.1rem;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+main {
+  align-self: center;
+  width: 95%;
 }
 
 .half {

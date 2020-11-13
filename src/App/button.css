@@ -62,7 +62,8 @@ span {
 @media only screen and (min-width: 990px) {
   div.sun{
     visibility: visible;
-    left:400px;
+    left:450px;
+    bottom: 65px;
   }
 }
 

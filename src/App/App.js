@@ -146,7 +146,7 @@ export default class App extends Component {
                 <div className="temp-box-top">
                   <h3>{Math.round(temp)}</h3>
                   <span>°F</span>
-                  <h3>/</h3>
+                  <h3>/ </h3>
                   <h3>{Math.round((5 / 9) * (temp - 32))}</h3>
                   <span>℃</span>
                 </div>
@@ -162,9 +162,9 @@ export default class App extends Component {
                     1 +
                     ":" +
                     moment(sunrise).minutes()}
-                  am | Sunset:{" "}
+                  <span>am</span> | Sunset:{" "}
                   {moment(sunset).hours() - 1 + ":" + moment(sunset).minutes()}
-                  pm | Country:{country}
+                  <span>pm</span> | Country:<span>{country}</span>
                 </div>
               </div>
             ) : (
@@ -183,7 +183,7 @@ export default class App extends Component {
                 type="text"
                 onChange={(e) => this.updateCity(e.target.value)}
               />
-              <label>and State/Province (optional)</label>
+              <label>and State/Province</label>
               <input
                 id="prov"
                 name="prov"
