@@ -12,9 +12,10 @@
   align-items: center;
   font-size: 1.4rem;
   color: white;
+  min-height: 100vh;
   height: 100%;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  padding-bottom: 20vh;
+  padding-bottom: 10vh;
 }
 
 h1 {
@@ -27,6 +28,7 @@ h3 {
 
 .temp-box-top > span {
   font-size: 2rem;
+  
 }
 
 .city-name {
@@ -34,8 +36,8 @@ h3 {
 }
 
 .sub-temps {
-  font-size: 0.8rem;
-  margin-top: 2vh;
+  font-size: 1rem;
+  margin-top: 1vh;
 }
 
 form{
@@ -48,8 +50,8 @@ form{
 
 .logo {
   align-self: center;
-  width: 50%;
-  margin-top: 1vh;
+  width: 60%;
+  margin-top: 3vh;
 }
 
 .temp-box {
@@ -64,9 +66,9 @@ form{
   align-self: center;
   justify-self: center;
   justify-content: center;
-  padding: 10px;
   border-radius: 15px;
-  width: 80%;
+  width: 95%;
+  padding: 30px;
 }
 
 input {
@@ -88,13 +90,11 @@ button {
   min-height: 4vh;
 }
 
-main {
- 
-}
-
 .half {
   align-self: center;
   width: 100%;
+  min-height: 100vh;
+  height: 100%;
   padding: 0px;
 }
 
@@ -103,6 +103,7 @@ main {
   padding: 20px;
   display: none;
 }
+
 
 /* @media only screen and (min-width: 500px) {
   
@@ -113,7 +114,7 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    width: 100vw;
+    width: 90%;
   }
 
   form {
@@ -124,9 +125,12 @@ main {
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     padding: 20px;
+  }
+
+  .sub-temps {
+    font-size: 2rem;
+    margin-top: 1vh;
   }
 
   .logo {

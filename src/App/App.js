@@ -117,7 +117,7 @@ export default class App extends Component {
     return (
       <div className="App ">
         <header>
-        <img src={logo} alt="Logo" className="logo" />
+          <img src={logo} alt="Logo" className="logo" />
         </header>
 
         <main>
@@ -133,11 +133,17 @@ export default class App extends Component {
                   <span>℃</span>
                 </div>
                 <div className="sub-temps">
-                  Feels like: {feels_like}<span>°F</span> | Min Temp: {temp_min}<span>°F</span> | Max Temp: {temp_max}<span>°F</span>
+                  Feels like: {Math.round(feels_like)}
+                  <span>°F</span> | Min Temp: {Math.round(temp_min)}
+                  <span>°F</span> | Max Temp: {Math.round(temp_max)}
+                  <span>°F</span>
                 </div>
                 <div className="sub-temps">
                   Sunrise:{" "}
-                  {moment(sunrise).hours() + 1 + ":" + moment(sunrise).minutes()}
+                  {moment(sunrise).hours() +
+                    1 +
+                    ":" +
+                    moment(sunrise).minutes()}
                   am | Sunset:{" "}
                   {moment(sunset).hours() - 1 + ":" + moment(sunset).minutes()}
                   pm | Country:{country}
@@ -145,11 +151,9 @@ export default class App extends Component {
               </div>
             ) : (
               <div>
-              <img src={hero} alt="hero-pic" className="hero-pic" />
-            </div>
+                <img src={hero} alt="hero-pic" className="hero-pic" />
+              </div>
             )}
-
-            
           </div>
 
           <div className="half">
@@ -183,7 +187,6 @@ export default class App extends Component {
             </form>
           </div>
         </main>
-
       </div>
     );
   }
