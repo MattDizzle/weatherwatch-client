@@ -94,8 +94,8 @@ main {
 
 .half {
   align-self: center;
-  width: 45vw;
-  padding: 20px;
+  width: 100%;
+  padding: 0px;
 }
 
 .hero-pic{
@@ -126,6 +126,7 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 20px;
   }
 
   .logo {
