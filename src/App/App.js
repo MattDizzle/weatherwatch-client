@@ -78,20 +78,19 @@ export default class App extends Component {
     fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${city.value},${prov.value}&appid=d1af8402c8f946b3ad0e892bbf7749b4&units=imperial`
     )
-    .then((res) => {
-      if(res.ok){
-      return res.json();
-      }
-      throw new Error(res.statusText)
-    })
-    .then((res) => {
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+        throw new Error(res.statusText);
+      })
+      .then((res) => {
         this.setState({ data: res });
-    })
-    .catch(err => {
-      console.log(err)
-    })
-  }
-  
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   getDataByZip = (ev) => {
     ev.preventDefault();
@@ -100,21 +99,17 @@ export default class App extends Component {
       `https://api.openweathermap.org/data/2.5/weather?zip=${zip.value}&appid=d1af8402c8f946b3ad0e892bbf7749b4&units=imperial`
     )
       .then((res) => {
-        if(res.ok){
-        return res.json();
+        if (res.ok) {
+          return res.json();
         }
-        throw new Error(res.statusText)
+        throw new Error(res.statusText);
       })
       .then((res) => {
-        
-          this.setState({ data: res });
-        
+        this.setState({ data: res });
       })
-      .catch(err => {
-        console.log(err)
-      }
-
-    )
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   render() {
@@ -150,12 +145,13 @@ export default class App extends Component {
                   <h3>{Math.round((5 / 9) * (temp - 32))}</h3>
                   <span>℃</span>
                 </div>
+
                 <div className="sub-temps">
-                  Feels like: {Math.round(feels_like)}
-                  <span>°F</span> | Min Temp: {Math.round(temp_min)}
-                  <span>°F</span> | Max Temp: {Math.round(temp_max)}
+                  Min Temp: {Math.round(temp_min)}
+                  <span>°F</span>| Max Temp: {Math.round(temp_max)}
                   <span>°F</span>
                 </div>
+
                 <div className="sub-temps">
                   Sunrise:{" "}
                   {moment(sunrise).hours() +
@@ -164,7 +160,12 @@ export default class App extends Component {
                     moment(sunrise).minutes()}
                   <span>am</span> | Sunset:{" "}
                   {moment(sunset).hours() - 1 + ":" + moment(sunset).minutes()}
-                  <span>pm</span> | Country:<span>{country}</span>
+                  <span>pm</span>
+                </div>
+
+                <div className="sub-temps">
+                  Feels like: {Math.round(feels_like)}
+                  <span>°F</span>| Country:<span>{country}</span>
                 </div>
               </div>
             ) : (
@@ -193,7 +194,7 @@ export default class App extends Component {
               <button type="submit" class="btn">
                 <span>Submit</span>
                 <div class="sun"></div>
-                </button>
+              </button>
             </form>
 
             <form onSubmit={this.getDataByZip}>
@@ -208,8 +209,7 @@ export default class App extends Component {
               <button type="submit" class="btn">
                 <span>Submit</span>
                 <div class="sun"></div>
-                </button>        
-
+              </button>
             </form>
           </div>
         </main>
