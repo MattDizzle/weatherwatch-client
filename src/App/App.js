@@ -108,7 +108,7 @@ export default class App extends Component {
       <div className="App">
         <Header />
         <h2>{this.state.data.name}</h2>
-        <h2>{Math.round(temp)}<span>°F</span>/{Math.round((5/9) * (temp - 32))}<span>℃</span> </h2>
+        {(temp) ? <h2>{Math.round(temp)}<span>°F</span>/{Math.round((5/9) * (temp - 32))}<span>℃</span> </h2> : ""}
         
         <form onSubmit={this.getDataByCityAndState}>
           <label>Enter a city </label>
