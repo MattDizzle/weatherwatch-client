@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
+import "./button.css";
 import logo from "../images/weather-watch-logo.png";
 import hero from "../images/weather-watch-logo.png";
 import moment from "moment";
@@ -77,13 +78,20 @@ export default class App extends Component {
     fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${city.value},${prov.value}&appid=d1af8402c8f946b3ad0e892bbf7749b4&units=imperial`
     )
-      .then((res) => {
-        return res.json();
-      })
-      .then((res) => {
+    .then((res) => {
+      if(res.ok){
+      return res.json();
+      }
+      throw new Error(res.statusText)
+    })
+    .then((res) => {
         this.setState({ data: res });
-      });
-  };
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  }
+  
 
   getDataByZip = (ev) => {
     ev.preventDefault();
@@ -182,7 +190,10 @@ export default class App extends Component {
                 type="text"
                 onChange={(e) => this.updateProvince(e.target.value)}
               />
-              <button type="submit">Submit </button>
+              <button type="submit" class="button container">
+                <span>Submit</span>
+                <div class="sun"></div>
+                </button>
             </form>
 
             <form onSubmit={this.getDataByZip}>
@@ -193,7 +204,12 @@ export default class App extends Component {
                 type="text"
                 onChange={(e) => this.updateZipcode(e.target.value)}
               />
-              <button type="submit">Submit </button>
+
+              <button type="submit" class="button container">
+                <span>Submit</span>
+                <div class="sun"></div>
+                </button>        
+
             </form>
           </div>
         </main>
