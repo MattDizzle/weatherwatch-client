@@ -116,60 +116,67 @@ export default class App extends Component {
     return (
       <div className="App ">
         <img src={logo} alt="Logo" className="logo" />
-        <h1>{this.state.data.name}</h1>
-        {temp ? (
-          <div className="temp-box ">
-            <div className="temp-box-top">
-              <h3>{Math.round(temp)}</h3>
-              <span>°F</span>
-              <h3>/</h3>
-              <h3>{Math.round((5 / 9) * (temp - 32))}</h3>
-              <span>℃</span>
-            </div>
-            <div className="sub-temps">
-              Feels like: {feels_like} | Min Temp: {temp_min} | Max Temp:{" "}
-              {temp_max}
-            </div>
-            <div className="sub-temps">
-              Sunrise:{" "}
-              {moment(sunrise).hours() + 1 + ":" + moment(sunrise).minutes()}am
-              | Sunset:{" "}
-              {moment(sunset).hours() - 1 + ":" + moment(sunset).minutes()}
-              pm | Country:{country}
-            </div>
+
+        <main>
+          <div className="half">
+            <h1>{this.state.data.name}</h1>
+            {temp ? (
+              <div className="temp-box ">
+                <div className="temp-box-top">
+                  <h3>{Math.round(temp)}</h3>
+                  <span>°F</span>
+                  <h3>/</h3>
+                  <h3>{Math.round((5 / 9) * (temp - 32))}</h3>
+                  <span>℃</span>
+                </div>
+                <div className="sub-temps">
+                  Feels like: {feels_like}<span>°F</span> | Min Temp: {temp_min}<span>°F</span> | Max Temp: {temp_max}<span>°F</span>
+                </div>
+                <div className="sub-temps">
+                  Sunrise:{" "}
+                  {moment(sunrise).hours() + 1 + ":" + moment(sunrise).minutes()}
+                  am | Sunset:{" "}
+                  {moment(sunset).hours() - 1 + ":" + moment(sunset).minutes()}
+                  pm | Country:{country}
+                </div>
+              </div>
+            ) : (
+              ""
+            )}
           </div>
-        ) : (
-          ""
-        )}
 
-        <form onSubmit={this.getDataByCityAndState}>
-          <label>Enter a city </label>
-          <input
-            id="city"
-            name="city"
-            type="text"
-            onChange={(e) => this.updateCity(e.target.value)}
-          />
-          <label>and State/Province (optional)</label>
-          <input
-            id="prov"
-            name="prov"
-            type="text"
-            onChange={(e) => this.updateProvince(e.target.value)}
-          />
-          <button type="submit">Submit </button>
-        </form>
+          <div className="half">
+            <form onSubmit={this.getDataByCityAndState}>
+              <label>Enter a city </label>
+              <input
+                id="city"
+                name="city"
+                type="text"
+                onChange={(e) => this.updateCity(e.target.value)}
+              />
+              <label>and State/Province (optional)</label>
+              <input
+                id="prov"
+                name="prov"
+                type="text"
+                onChange={(e) => this.updateProvince(e.target.value)}
+              />
+              <button type="submit">Submit </button>
+            </form>
 
-        <form onSubmit={this.getDataByZip}>
-          <label>or zipcode </label>
-          <input
-            id="zip"
-            name="zip"
-            type="text"
-            onChange={(e) => this.updateZipcode(e.target.value)}
-          />
-          <button type="submit">Submit </button>
-        </form>
+            <form onSubmit={this.getDataByZip}>
+              <label>or zipcode </label>
+              <input
+                id="zip"
+                name="zip"
+                type="text"
+                onChange={(e) => this.updateZipcode(e.target.value)}
+              />
+              <button type="submit">Submit </button>
+            </form>
+          </div>
+        </main>
+
       </div>
     );
   }
