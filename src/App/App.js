@@ -1,54 +1,57 @@
 import React, { Component } from "react";
 import "./App.css";
-import Header from "../Header/Header";
+import logo from "../images/weather-watch-logo.png";
+import moment from 'moment';
+moment().format();
+
 export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       data: {
-        "coord": {
-            "lon": null,
-            "lat": null
+        coord: {
+          lon: null,
+          lat: null,
         },
-        "weather": [
-            {
-                "id": null,
-                "main": "",
-                "description": "",
-                "icon": ""
-            }
+        weather: [
+          {
+            id: null,
+            main: "",
+            description: "",
+            icon: "",
+          },
         ],
-        "base": "",
-        "main": {
-            "temp": null,
-            "feels_like": null,
-            "temp_min": null,
-            "temp_max": null,
-            "pressure": null,
-            "humidity": null
+        base: "",
+        main: {
+          temp: null,
+          feels_like: null,
+          temp_min: null,
+          temp_max: null,
+          pressure: null,
+          humidity: null,
         },
-        "visibility": null,
-        "wind": {
-            "speed": null,
-            "deg": null,
-            "gust": null
+        visibility: null,
+        wind: {
+          speed: null,
+          deg: null,
+          gust: null,
         },
-        "clouds": {
-            "all": null
+        clouds: {
+          all: null,
         },
-        "dt": null,
-        "sys": {
-            "type": null,
-            "id": null,
-            "country": "",
-            "sunrise": null,
-            "sunset": null
+        dt: null,
+        sys: {
+          type: null,
+          id: null,
+          country: "",
+          sunrise: null,
+          sunset: null,
         },
-        "timezone": null,
-        "id": null,
-        "name": "",
-        "cod": null
-    },
+        timezone: null,
+        id: null,
+        name: "",
+        cod: null,
+      },
       city: { value: "", touched: false },
       province: { value: "", touched: false },
       zipcode: { value: "", touched: false },
@@ -97,19 +100,39 @@ export default class App extends Component {
       });
   };
 
-  
-
   render() {
-    // let main = this.state.data["main"];
-    const { main } = this.state.data;
-    const { temp } = this.state.data.main
+    const {
+      temp,
+      feels_like,
+      temp_min,
+      temp_max,
+      pressure,
+      humidity,
+    } = this.state.data.main;
+    const { lon, lat } = this.state.data.coord;
+    const { main, description, icon } = this.state.data.weather;
+    const { speed, deg, gust } = this.state.data.wind;
+    const { country, sunrise, sunset } = this.state.data.sys;
     // console.log(main.temp);
     return (
       <div className="App">
-        <Header />
+        <img src={logo} alt="Logo" className='logo' />
         <h2>{this.state.data.name}</h2>
-        {(temp) ? <h2>{Math.round(temp)}<span>°F</span>/{Math.round((5/9) * (temp - 32))}<span>℃</span> </h2> : ""}
+        {temp ? (
+          <div className='temp-box'>
+            <div className='temp-box-top'>
+            <h2 className="tempature">{Math.round(temp)}</h2>
+            <span>°F</span>/
+            <h2>{Math.round((5 / 9) * (temp - 32))}</h2>
+            <span>℃</span>
+            </div>
+        <div>Feels like: {feels_like} | Min Temp: {temp_min} | Max Temp: {temp_max}</div>
+          </div>
+        ) : (
+          ""
+        )}
         
+
         <form onSubmit={this.getDataByCityAndState}>
           <label>Enter a city </label>
           <input
