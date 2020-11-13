@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import "./App.css";
 import "./button.css";
+import "./App.css";
 import logo from "../images/weather-watch-logo.png";
 import hero from "../images/weather-watch-logo.png";
 import moment from "moment";
@@ -153,8 +153,8 @@ export default class App extends Component {
                 </div>
 
                 <div className="sub-temps">
-                  Forecast: {main}| Pressure: {pressure}
-                  <span>inHg</span>
+                  Forecast: {main}| Wind: {speed}
+                  <span>mph</span>
                 </div>
 
                 <div className="sub-temps">
@@ -186,7 +186,7 @@ export default class App extends Component {
                 onChange={(e) => this.updateProvince(e.target.value)}
               />
               <button type="submit" class="btn">
-                <span>Submit</span>
+              <span>Submit</span> 
               </button>
             </form>
 
@@ -200,7 +200,7 @@ export default class App extends Component {
               />
 
               <button type="submit" class="btn">
-                <span>Submit</span>
+              <span>Submit</span> 
               </button>
             </form>
           </div>
