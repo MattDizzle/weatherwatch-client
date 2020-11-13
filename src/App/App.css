@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: 0;
+  box-sizing: border-box;
 }
 
 .App {
@@ -29,7 +29,6 @@ h3 {
   font-size: 2rem;
 }
 
-
 .city-name {
   font-size: 0.8rem;
 }
@@ -49,7 +48,7 @@ form{
 
 .logo {
   align-self: center;
-  width: 60vw;
+  width: 50%;
   margin-top: 1vh;
 }
 
@@ -67,7 +66,7 @@ form{
   justify-content: center;
   padding: 10px;
   border-radius: 15px;
-  width: 80vw;
+  width: 80%;
 }
 
 input {
@@ -90,12 +89,57 @@ button {
 }
 
 main {
-  align-self: center;
-  margin: auto;
+ 
 }
 
 .half {
   align-self: center;
+  width: 45vw;
+  padding: 20px;
+}
+
+.hero-pic{
+  width: 100%;
+  padding: 20px;
+  display: none;
+}
+
+/* @media only screen and (min-width: 500px) {
+  
+} */
+
+@media only screen and (min-width: 990px) {
+  main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100vw;
+  }
+
+  form {
+    width: 100%;
+  }
+
+  .half {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logo {
+    align-self: flex-start;
+    width: 10vw;
+    margin-top: 1vh;
+    margin-left: 1vw;
+  }
+
+  .hero-pic{
+    width: 100%;
+    padding: 20px;
+    display: flex;  
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -110,19 +154,5 @@ main {
   }
   to {
     transform: rotate(360deg);
-  }
-}
-
-@media only screen and (min-width: 500px) {
-  main {
-    background-color: rgb(0, 255, 13);
-  }
-}
-
-@media only screen and (min-width: 990px) {
-  main {
-    background-color: rgb(0, 186, 248);
-    display: flex;
-    flex-direction: row;
   }
 }

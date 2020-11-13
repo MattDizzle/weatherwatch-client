@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import logo from "../images/weather-watch-logo.png";
+import hero from "../images/Web3.png";
 import moment from "moment";
 moment().format();
 
@@ -115,7 +116,9 @@ export default class App extends Component {
     console.log(country);
     return (
       <div className="App ">
+        <header>
         <img src={logo} alt="Logo" className="logo" />
+        </header>
 
         <main>
           <div className="half">
@@ -141,8 +144,12 @@ export default class App extends Component {
                 </div>
               </div>
             ) : (
-              ""
+              <div>
+              <img src={hero} alt="hero-pic" className="hero-pic" />
+            </div>
             )}
+
+            
           </div>
 
           <div className="half">
