@@ -33,12 +33,6 @@ $border: linear-gradient(180deg, #ffdc2a 0%, #fb2182 41.54%); */
   border-image: linear-gradient(#360154, #d442d5) 30;
   margin-top: 25px;
   margin-bottom: 25px;
-  color: #ffdc2a;
-  font-family: 'Nova Square', cursive;
-  font-size: 35px;
-  background: -webkit-linear-gradient(#360154, #d442d5);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   justify-content: center;
   align-items: center;
 }
@@ -47,21 +41,27 @@ $border: linear-gradient(180deg, #ffdc2a 0%, #fb2182 41.54%); */
   -webkit-text-fill-color: #ffdc2a;
   bottom: 90px;
   transition: all 1s ease-in-out;
-  background: #2c0055;
+  background: #360068;
   color: #ffc62a;
   box-shadow: 0px 0px 36px #ffc62a;
 }
 
-/* button {
+button > span {
   text-align: center;
   font-family: 'Nova Square', cursive;
   font-size: 35px;
-  line-height: 70px;
+  line-height: 60px;
   transition: all 0.3s ease-in-out;
-  color: #ffdc2a;
+  background: -webkit-linear-gradient(#ffdc2a, #fb2182);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-} */
+}
+
+span {
+  background: -webkit-linear-gradient(#ffdc2a, #fb2182);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 .sub-temps > span {
   font-size: 0.75rem;
