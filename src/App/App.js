@@ -5,7 +5,50 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: {},
+      data: {
+        "coord": {
+            "lon": null,
+            "lat": null
+        },
+        "weather": [
+            {
+                "id": null,
+                "main": "",
+                "description": "",
+                "icon": ""
+            }
+        ],
+        "base": "",
+        "main": {
+            "temp": null,
+            "feels_like": null,
+            "temp_min": null,
+            "temp_max": null,
+            "pressure": null,
+            "humidity": null
+        },
+        "visibility": null,
+        "wind": {
+            "speed": null,
+            "deg": null,
+            "gust": null
+        },
+        "clouds": {
+            "all": null
+        },
+        "dt": null,
+        "sys": {
+            "type": null,
+            "id": null,
+            "country": "",
+            "sunrise": null,
+            "sunset": null
+        },
+        "timezone": null,
+        "id": null,
+        "name": "",
+        "cod": null
+    },
       city: { value: "", touched: false },
       province: { value: "", touched: false },
       zipcode: { value: "", touched: false },
@@ -28,7 +71,7 @@ export default class App extends Component {
     ev.preventDefault();
     const { city, prov } = ev.target;
     fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city.value},${prov.value}&appid=d1af8402c8f946b3ad0e892bbf7749b4`
+      `https://api.openweathermap.org/data/2.5/weather?q=${city.value},${prov.value}&appid=d1af8402c8f946b3ad0e892bbf7749b4&units=imperial`
     )
       .then((res) => {
         return res.json();
@@ -44,7 +87,7 @@ export default class App extends Component {
     console.log(this.state.zipcode);
     console.log("targets--", zip.value);
     fetch(
-      `https://api.openweathermap.org/data/2.5/weather?zip=${zip.value}&appid=d1af8402c8f946b3ad0e892bbf7749b4`
+      `https://api.openweathermap.org/data/2.5/weather?zip=${zip.value}&appid=d1af8402c8f946b3ad0e892bbf7749b4&units=imperial`
     )
       .then((res) => {
         return res.json();
@@ -57,14 +100,16 @@ export default class App extends Component {
   
 
   render() {
-    let main = this.state.data["main"];
-    console.log(main);
-    console.log(this.state.data)
+    // let main = this.state.data["main"];
+    const { main } = this.state.data;
+    const { temp } = this.state.data.main
+    console.log(main.temp);
     return (
       <div className="App">
         <Header />
-        <h2> Visibility: {this.state.data.visibility} </h2>
-        <h2>City: {this.state.data.name}</h2>
+        <h2>{this.state.data.name}</h2>
+        <h2> Temp: {temp} </h2>
+        
         <form onSubmit={this.getDataByCityAndState}>
           <label>Enter a city </label>
           <input
