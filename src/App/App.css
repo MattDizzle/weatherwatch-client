@@ -10,18 +10,23 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   color: white;
-  height: 100vh;
+  height: 100%;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  padding-bottom: 20vh;
 }
 
 h1 {
-  font-size: 0.8rem;
+  font-size: 3rem;
 }
 
-.temperature {
-  font-size: 4rem;
+h3 {
+  font-size: 5rem;
+}
+
+.temp-box-top > span {
+  font-size: 2rem;
 }
 
 
@@ -39,13 +44,12 @@ form{
   flex-direction: column;
   width: 80%;
   align-self: center;
-  margin-top: 5vh;
 }
 
 .logo {
   align-self: center;
-  width: 50vw;
-  margin-top: 3vh;
+  width: 60vw;
+  margin-top: 1vh;
 }
 
 .temp-box {
@@ -62,7 +66,7 @@ form{
   justify-content: center;
   padding: 10px;
   border-radius: 15px;
-  width: 50%;
+  width: 80vw;
 }
 
 input {

@@ -116,13 +116,14 @@ export default class App extends Component {
     return (
       <div className="App ">
         <img src={logo} alt="Logo" className="logo" />
-        <h2 className="city-name">{this.state.data.name}</h2>
+        <h1>{this.state.data.name}</h1>
         {temp ? (
           <div className="temp-box ">
             <div className="temp-box-top">
-              <h3 className="tempature">{Math.round(temp)}</h3>
-              <span>°F</span>/
-              <h3 className="tempature">{Math.round((5 / 9) * (temp - 32))}</h3>
+              <h3>{Math.round(temp)}</h3>
+              <span>°F</span>
+              <h3>/</h3>
+              <h3>{Math.round((5 / 9) * (temp - 32))}</h3>
               <span>℃</span>
             </div>
             <div className="sub-temps">
@@ -131,8 +132,9 @@ export default class App extends Component {
             </div>
             <div className="sub-temps">
               Sunrise:{" "}
-              {(moment(sunrise).hours()+1) + ":" + moment(sunrise).minutes()}am |
-              Sunset: {(moment(sunset).hours()-1) + ":" + moment(sunset).minutes()}
+              {moment(sunrise).hours() + 1 + ":" + moment(sunrise).minutes()}am
+              | Sunset:{" "}
+              {moment(sunset).hours() - 1 + ":" + moment(sunset).minutes()}
               pm | Country:{country}
             </div>
           </div>
