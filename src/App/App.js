@@ -126,7 +126,7 @@ export default class App extends Component {
             <h2>{Math.round((5 / 9) * (temp - 32))}</h2>
             <span>℃</span>
             </div>
-        <div>Feels like: {feels_like} | Min Temp: {temp_min} | Max Temp: {temp_max}</div>
+        <div className='sub-temps'>Feels like: {feels_like} | Min Temp: {temp_min} | Max Temp: {temp_max}</div>
           </div>
         ) : (
           ""

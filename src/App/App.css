@@ -11,8 +11,17 @@
   flex-direction: column;
   font-size: 1.1rem;
   color: white;
-  min-height: 80vh;
+  height: 100vh;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+h2 {
+  font-size: 5rem;
+}
+
+.sub-temps {
+  font-size: 0.8rem;
+  margin-top: 2vh;
 }
 
 form{
@@ -43,6 +52,10 @@ form{
   padding: 10px;
   border-radius: 15px;
   width: 50%;
+}
+
+form {
+  margin-top: 5vh;
 }
 
 @media (prefers-reduced-motion: no-preference) {
