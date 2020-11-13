@@ -131,8 +131,8 @@ export default class App extends Component {
             </div>
             <div className="sub-temps">
               Sunrise:{" "}
-              {moment(sunrise).hours() + ":" + moment(sunrise).minutes()}am |
-              Sunset: {moment(sunset).hours() + ":" + moment(sunset).minutes()}
+              {(moment(sunrise).hours()+1) + ":" + moment(sunrise).minutes()}am |
+              Sunset: {(moment(sunset).hours()-1) + ":" + moment(sunset).minutes()}
               pm | Country:{country}
             </div>
           </div>
