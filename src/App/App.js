@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import logo from "../images/weather-watch-logo.png";
-import moment from 'moment';
+import moment from "moment";
 moment().format();
 
 export default class App extends Component {
@@ -87,8 +87,6 @@ export default class App extends Component {
   getDataByZip = (ev) => {
     ev.preventDefault();
     const { zip } = ev.target;
-    console.log(this.state.zipcode);
-    console.log("targets--", zip.value);
     fetch(
       `https://api.openweathermap.org/data/2.5/weather?zip=${zip.value}&appid=d1af8402c8f946b3ad0e892bbf7749b4&units=imperial`
     )
@@ -113,25 +111,34 @@ export default class App extends Component {
     const { main, description, icon } = this.state.data.weather;
     const { speed, deg, gust } = this.state.data.wind;
     const { country, sunrise, sunset } = this.state.data.sys;
-    // console.log(main.temp);
+    // console.log(moment(sunrise).hours() + ":" + moment(sunrise).minutes());
+    console.log(country);
     return (
-      <div className="App">
-        <img src={logo} alt="Logo" className='logo' />
-        <h2>{this.state.data.name}</h2>
+      <div className="App ">
+        <img src={logo} alt="Logo" className="logo" />
+        <h2 className="city-name">{this.state.data.name}</h2>
         {temp ? (
-          <div className='temp-box'>
-            <div className='temp-box-top'>
-            <h2 className="tempature">{Math.round(temp)}</h2>
-            <span>°F</span>/
-            <h2>{Math.round((5 / 9) * (temp - 32))}</h2>
-            <span>℃</span>
+          <div className="temp-box ">
+            <div className="temp-box-top">
+              <h3 className="tempature">{Math.round(temp)}</h3>
+              <span>°F</span>/
+              <h3 className="tempature">{Math.round((5 / 9) * (temp - 32))}</h3>
+              <span>℃</span>
             </div>
-        <div className='sub-temps'>Feels like: {feels_like} | Min Temp: {temp_min} | Max Temp: {temp_max}</div>
+            <div className="sub-temps">
+              Feels like: {feels_like} | Min Temp: {temp_min} | Max Temp:{" "}
+              {temp_max}
+            </div>
+            <div className="sub-temps">
+              Sunrise:{" "}
+              {moment(sunrise).hours() + ":" + moment(sunrise).minutes()}am |
+              Sunset: {moment(sunset).hours() + ":" + moment(sunset).minutes()}
+              pm | Country:{country}
+            </div>
           </div>
         ) : (
           ""
         )}
-        
 
         <form onSubmit={this.getDataByCityAndState}>
           <label>Enter a city </label>

@@ -9,14 +9,24 @@
   background: linear-gradient(#5FC9F6,#594796);
   display: flex;
   flex-direction: column;
+  align-items: center;
   font-size: 1.1rem;
   color: white;
   height: 100vh;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-h2 {
-  font-size: 5rem;
+h1 {
+  font-size: 0.8rem;
+}
+
+.temperature {
+  font-size: 4rem;
+}
+
+
+.city-name {
+  font-size: 0.8rem;
 }
 
 .sub-temps {
@@ -29,6 +39,7 @@ form{
   flex-direction: column;
   width: 50%;
   align-self: center;
+  margin-top: 5vh;
 }
 
 .logo {
@@ -54,8 +65,14 @@ form{
   width: 50%;
 }
 
-form {
-  margin-top: 5vh;
+input {
+  border-radius: 15px;
+  margin-top: 5px;
+}
+
+label {
+  font-size: 0.7rem;
+  margin-top: 10px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
