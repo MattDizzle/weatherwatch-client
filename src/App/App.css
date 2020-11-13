@@ -8,10 +8,10 @@
 
 .App {
   text-align: center;
-  background: linear-gradient(#ffdc2a,#5FC9F6,#594796,#2c0055);
+  background: linear-gradient(#ffdc2a,#3bbff8,#594796,#2c0055);
   display: flex;
   flex-direction: column;
-  font-size: 1.4rem;
+  font-size: 2rem;
   color: white;
   min-height: 100vh;
   height: 100%;
@@ -22,10 +22,11 @@
 
 h1 {
   font-size: 3rem;
+  margin-bottom: 5px;
 }
 
 h3 {
-  font-size: 5rem;
+  font-size: 3rem;
 }
 
 .temp-box-top > span {
@@ -39,7 +40,7 @@ h3 {
 
 .sub-temps {
   font-size: 1rem;
-  margin-top: 1vh;
+  margin-top: 10px;
 }
 
 form{
@@ -106,6 +107,16 @@ main {
   display: none;
 }
 
+.sub-temps {
+  font-size: 1rem;
+  height: 20px;
+  margin-bottom: 15px;
+}
+
+.sub-temps > span {
+  font-size: 0.8rem;
+}
+
 
 /* @media only screen and (min-width: 500px) {
   
@@ -117,6 +128,15 @@ main {
     flex-direction: row;
     justify-content: space-evenly;
     width: 90%;
+  }
+
+  h1 {
+    font-size: 5rem;
+    margin-bottom: 5px;
+  }
+  
+  h3 {
+    font-size: 6rem;
   }
 
   form {
@@ -132,12 +152,13 @@ main {
   }
 
   .sub-temps {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     height: 20px;
+    margin-bottom: 15px;
   }
 
   .sub-temps > span {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
   }
 
   .logo {

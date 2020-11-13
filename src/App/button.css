@@ -1,24 +1,4 @@
-/* $body-bg: linear-gradient(180deg, #1c0138 0%, #2c0055 100%);
-$border: linear-gradient(180deg, #ffdc2a 0%, #fb2182 41.54%); */
 @import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
-
-/* .btn{
-  box-shadow: 0px 0px 36px #c80de0;
-  transition: all 1s ease-in-out;
-  width: 100%;
-  align-self: center;
-  margin-top: 25px;
-  background: #2c0055;
-  height: 80px;
-  color: #ffdc2a;
-  font-family: 'Nova Square', cursive;
-  font-size: 35px;
-  background: -webkit-linear-gradient(#eee, #333);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-} */
-
-
      
 .btn {
   display: flex;
@@ -64,7 +44,7 @@ span {
 }
 
 .sub-temps > span {
-  font-size: 0.75rem;
+  font-size: 1rem;
   align-self: end;
 }
     

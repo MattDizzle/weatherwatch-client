@@ -122,11 +122,11 @@ export default class App extends Component {
       humidity,
     } = this.state.data.main;
     const { lon, lat } = this.state.data.coord;
-    const { main, description, icon } = this.state.data.weather;
+    const { main, description, icon } = this.state.data.weather[0];
     const { speed, deg, gust } = this.state.data.wind;
     const { country, sunrise, sunset } = this.state.data.sys;
     // console.log(moment(sunrise).hours() + ":" + moment(sunrise).minutes());
-    console.log(sunrise);
+    console.log(sunrise, description);
     return (
       <div className="App ">
         <header>
@@ -141,20 +141,20 @@ export default class App extends Component {
                 <div className="temp-box-top">
                   <h3>{Math.round(temp)}</h3>
                   <span>°F</span>
-                  <h3>/ </h3>
-                  <h3>{Math.round((5 / 9) * (temp - 32))}</h3>
+                  <h3> | {Math.round((5 / 9) * (temp - 32))}</h3>
                   <span>℃</span>
                 </div>
 
                 <div className="sub-temps">
-                  Min Temp: {Math.round(temp_min)}
-                  <span>°F</span>| Max Temp: {Math.round(temp_max)}
-                  <span>°F</span>
+                  Forecast: {description}| Wind: {speed}
+                  <span>mph</span>
                 </div>
 
                 <div className="sub-temps">
-                  Forecast: {main}| Wind: {speed}
-                  <span>mph</span>
+                  Min Temp: {Math.round(temp_min)}
+                  <span>°F</span>
+                  | Max Temp: {Math.round(temp_max)}
+                  <span>°F</span>
                 </div>
 
                 <div className="sub-temps">
@@ -185,7 +185,7 @@ export default class App extends Component {
                 type="text"
                 onChange={(e) => this.updateProvince(e.target.value)}
               />
-              <button type="submit" class="btn">
+              <button type="submit" className="btn">
               <span>Submit</span> 
               </button>
             </form>
@@ -199,7 +199,7 @@ export default class App extends Component {
                 onChange={(e) => this.updateZipcode(e.target.value)}
               />
 
-              <button type="submit" class="btn">
+              <button type="submit" className="btn">
               <span>Submit</span> 
               </button>
             </form>
