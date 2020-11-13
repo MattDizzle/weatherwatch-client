@@ -37,7 +37,7 @@ h1 {
 form{
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 80%;
   align-self: center;
   margin-top: 5vh;
 }
@@ -68,11 +68,20 @@ form{
 input {
   border-radius: 15px;
   margin-top: 5px;
+  background-color: #d2f1ff5e;
+  min-height: 5vh;
 }
 
 label {
-  font-size: 0.7rem;
+  font-size: 1.1rem;
   margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+button {
+  border-radius: 15px;
+  margin-top: 20px;
+  min-height: 4vh;
 }
 
 @media (prefers-reduced-motion: no-preference) {

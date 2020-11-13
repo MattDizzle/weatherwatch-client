@@ -148,14 +148,14 @@ export default class App extends Component {
             type="text"
             onChange={(e) => this.updateCity(e.target.value)}
           />
-          <label>and State/Province </label>
+          <label>and State/Province (optional)</label>
           <input
             id="prov"
             name="prov"
             type="text"
             onChange={(e) => this.updateProvince(e.target.value)}
           />
-          <input type="submit" />
+          <button type="submit">Submit </button>
         </form>
 
         <form onSubmit={this.getDataByZip}>
@@ -166,7 +166,7 @@ export default class App extends Component {
             type="text"
             onChange={(e) => this.updateZipcode(e.target.value)}
           />
-          <input type="submit" />
+          <button type="submit">Submit </button>
         </form>
       </div>
     );
