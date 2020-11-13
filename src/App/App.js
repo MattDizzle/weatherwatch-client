@@ -92,11 +92,21 @@ export default class App extends Component {
       `https://api.openweathermap.org/data/2.5/weather?zip=${zip.value}&appid=d1af8402c8f946b3ad0e892bbf7749b4&units=imperial`
     )
       .then((res) => {
+        if(res.ok){
         return res.json();
+        }
+        throw new Error(res.statusText)
       })
       .then((res) => {
-        this.setState({ data: res });
-      });
+        
+          this.setState({ data: res });
+        
+      })
+      .catch(err => {
+        console.log(err)
+      }
+
+    )
   };
 
   render() {
