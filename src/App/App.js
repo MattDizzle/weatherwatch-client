@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import logo from "../images/weather-watch-logo.png";
-import hero from "../images/Web3.png";
+import hero from "../images/weather-watch-logo.png";
 import moment from "moment";
 moment().format();
 
