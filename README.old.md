@@ -1,1 +1,0 @@
-# weatherwatch-client
