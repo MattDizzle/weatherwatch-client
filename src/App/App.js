@@ -103,7 +103,7 @@ export default class App extends Component {
     // let main = this.state.data["main"];
     const { main } = this.state.data;
     const { temp } = this.state.data.main
-    console.log(main.temp);
+    // console.log(main.temp);
     return (
       <div className="App">
         <Header />
