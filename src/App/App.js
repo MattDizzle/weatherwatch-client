@@ -132,12 +132,15 @@ export default class App extends Component {
         <main>
           <section className="half">
             <h1>{this.state.data.name}</h1>
-            <p>
-              Longitude:<span>{lon}</span>
-            </p>
-            <p>
-              Latitude:<span>{lat}</span>
-            </p>
+
+            {temp ? (
+              <p>
+                Longitude:<span>{lon}</span> | Latitude:<span>{lat}</span>
+              </p>
+            ) : (
+              ""
+            )}
+
             {temp ? (
               <section className="temp-box">
                 <div className="temp-box-top">
