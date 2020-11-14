@@ -155,8 +155,10 @@ export default class App extends Component {
             {temp ? (
               <section className="temp-box">
                 <div className="temp-box-top">
-                  <img src={iconString} className="weather-pic" />
-                  <span>{description}</span>
+                  <div className="icon-box">
+                    <img src={iconString} className="weather-pic" />
+                    <span>{description}</span>
+                  </div>
                   <div>
                     <h3>
                       {Math.round(temp)}

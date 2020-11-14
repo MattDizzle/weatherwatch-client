@@ -82,6 +82,7 @@ form{
   border-radius: 15px;
   width: 95%;
   padding: 30px;
+  padding-top: 0;
 }
 
 input {
@@ -131,6 +132,18 @@ main {
 .weather-pic {
   width: 50%;
   align-self: center;
+  position: relative;
+  bottom: -5vh;
+  margin-top: 0;
+  background-clip: content-box;
+}
+
+.icon-box {
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+  margin: 0;
+  padding: 0;
 }
 
 @media only screen and (min-width: 990px) {
