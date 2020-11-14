@@ -17,6 +17,17 @@
   align-items: center;
 }
 
+
+button[type="submit"]:disabled {
+  background: #2c70ee;
+}
+
+button[type="submit"]:disabled > span {
+  background: -webkit-linear-gradient(#360154, #d442d5, #d442d5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
  .btn:hover {
   -webkit-text-fill-color: #ffdc2a;
   bottom: 90px;
@@ -48,7 +59,5 @@ span {
   align-self: end;
 }
     
-@media only screen and (min-width: 990px) {
-  
-}
+
 

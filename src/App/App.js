@@ -144,8 +144,8 @@ export default class App extends Component {
     const zipcode = this.state.zipcode.value.trim();
     if (zipcode.length === 0) {
       return "Zip code Invalid";
-    } else if (zipcode.length < 3) {
-      return "Zip code must be at least 3 characters long";
+    } else if (zipcode.length < 5) {
+      return "Zip code must be at least 5 characters long";
     }
   }
 
@@ -228,7 +228,7 @@ export default class App extends Component {
 
           <section className="half">
             <form onSubmit={this.getDataByCityAndState}>
-              <label htmlFor="city">Enter a city </label>
+              <label htmlFor="city">Enter a City </label>
               <input
                 id="city"
                 name="city"
@@ -251,13 +251,14 @@ export default class App extends Component {
               {this.state.province.touched && (
                 <ValidationError message={provinceError} />
               )}
-              <button type="submit" className="btn">
+              <button type="submit" className="btn" disabled={this.validateCity() ||
+                  this.validateProvince() }>
                 <span>Submit</span>
               </button>
             </form>
 
             <form onSubmit={this.getDataByZip}>
-              <label htmlFor="zip">or zipcode </label>
+              <label htmlFor="zip">or Zip Code </label>
               <input
                 id="zip"
                 name="zip"
@@ -273,8 +274,6 @@ export default class App extends Component {
                 type="submit"
                 className="btn"
                 disabled={
-                  this.validateCity() ||
-                  this.validateProvince() ||
                   this.validateZipcode()
                 }
               >
