@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ZipForm Component Snapshot test Renders the UI as expected 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <label
+    htmlFor="zip"
+  >
+    Enter a Zip Code 
+  </label>
+  <input
+    id="zip"
+    name="zip"
+    onChange={[Function]}
+    pattern="[0-9]*"
+    required={true}
+    type="text"
+  />
+  <button
+    className="btn"
+    disabled="Zip code must be at least 5 numbers long"
+    type="submit"
+  >
+    <span>
+      Submit
+    </span>
+  </button>
+</form>
+`;

@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CityForm Component Snapshot test Renders the UI as expected 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <label
+    htmlFor="city"
+  >
+    Enter a City 
+  </label>
+  <input
+    id="city"
+    name="city"
+    onChange={[Function]}
+    required={true}
+    type="text"
+  />
+  <label
+    htmlFor="prov"
+  >
+    and State/Province
+  </label>
+  <input
+    id="prov"
+    name="prov"
+    onChange={[Function]}
+    type="text"
+  />
+  <button
+    className="btn"
+    disabled="City is required"
+    type="submit"
+  >
+    <span>
+      Submit
+    </span>
+  </button>
+</form>
+`;

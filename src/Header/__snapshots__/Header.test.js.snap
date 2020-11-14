@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Component Snapshot test Renders the UI as expected 1`] = `
+<header>
+  <img
+    alt="Logo"
+    className="logo"
+    src="weather-watch-logo.png"
+  />
+</header>
+`;

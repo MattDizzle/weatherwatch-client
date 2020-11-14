@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Main Component Snapshot test Renders the UI as expected 1`] = `
+<section
+  className="half"
+>
+  <h1>
+    
+  </h1>
+  
+  <div>
+    <img
+      alt="weather-watch-logo-hero-pic"
+      className="hero-pic"
+      src="weather-watch-logo.png"
+    />
+  </div>
+</section>
+`;
