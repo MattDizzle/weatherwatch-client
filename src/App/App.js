@@ -121,12 +121,18 @@ export default class App extends Component {
   };
 
   render() {
-    const { temp, feels_like, temp_min, temp_max } = this.state.data.main;
+    const {
+      temp,
+      feels_like,
+      temp_min,
+      temp_max,
+      humidity,
+    } = this.state.data.main;
     const { lon, lat } = this.state.data.coord;
     const { description, icon } = this.state.data.weather[0];
     const { speed } = this.state.data.wind;
     const { country } = this.state.data.sys;
-    const iconString = `http://openweathermap.org/img/wn/${icon}.png`
+    const iconString = `http://openweathermap.org/img/wn/${icon}.png`;
 
     return (
       <div className="App">
@@ -149,7 +155,7 @@ export default class App extends Component {
             {temp ? (
               <section className="temp-box">
                 <div className="temp-box-top">
-                  <img src={iconString} className='weather-pic' />
+                  <img src={iconString} className="weather-pic" />
                   <span>{description}</span>
                   <div>
                     <h3>
@@ -164,7 +170,7 @@ export default class App extends Component {
                 </div>
 
                 <div className="sub-temps">
-                  Forecast: {description} Wind: {speed}
+                  Humidity: {humidity} Wind: {speed}
                   <span>mph</span>
                 </div>
 
