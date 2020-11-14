@@ -149,14 +149,14 @@ export default class App extends Component {
               <section className="temp-box">
                 <div className="temp-box-top">
                   <div>
-                  <h3>
-                    {Math.round(temp)}
-                    <span>°F</span>
-                    {"  "}
-                    {Math.round((5 / 9) * (temp - 32))}
-                    <span>℃</span>
-                  </h3>
-                  </div >
+                    <h3>
+                      {Math.round(temp)}
+                      <span>°F</span>
+                      {"  "}
+                      {Math.round((5 / 9) * (temp - 32))}
+                      <span>℃</span>
+                    </h3>
+                  </div>
                   <h4>Current Temperature</h4>
                 </div>
 
@@ -185,11 +185,12 @@ export default class App extends Component {
 
           <section className="half">
             <form onSubmit={this.getDataByCityAndState}>
-              <label>Enter a city </label>
+              <label htmlFor="city">Enter a city </label>
               <input
                 id="city"
                 name="city"
                 type="text"
+                required
                 onChange={(e) => this.updateCity(e.target.value)}
               />
               <label htmlFor="prov">and State/Province</label>
@@ -210,6 +211,7 @@ export default class App extends Component {
                 id="zip"
                 name="zip"
                 type="text"
+                required
                 onChange={(e) => this.updateZipcode(e.target.value)}
               />
 

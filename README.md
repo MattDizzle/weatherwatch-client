@@ -2,7 +2,17 @@
 
 ## by Matthew Rougely
 
-### Tech Stack: HTML, CSS, JAVASCRIPT, REACT
+### Tech:
+
+HTML, CSS, JAVASCRIPT, REACT
+
+## Hosting/SaaS:
+
+VERCEL
+
+## Development Environment:
+
+Node.js
 
 #### Powered by openweathermap.org API
 
