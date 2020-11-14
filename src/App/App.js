@@ -111,16 +111,10 @@ export default class App extends Component {
   };
 
   render() {
-    const {
-      temp,
-      feels_like,
-      temp_min,
-      temp_max,
-      humidity,
-    } = this.state.data.main;
+    const { temp, feels_like, temp_min, temp_max } = this.state.data.main;
     const { lon, lat } = this.state.data.coord;
-    const { description, icon } = this.state.data.weather[0];
-    const { speed, deg, gust } = this.state.data.wind;
+    const { description } = this.state.data.weather[0];
+    const { speed } = this.state.data.wind;
     const { country } = this.state.data.sys;
 
     return (

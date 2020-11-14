@@ -119,11 +119,6 @@ main {
   font-size: 0.8rem;
 }
 
-
-/* @media only screen and (min-width: 500px) {
-  
-} */
-
 @media only screen and (min-width: 990px) {
   main {
     display: flex;
@@ -174,20 +169,5 @@ main {
     width: 100%;
     padding: 20px;
     display: flex;  
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .loading {
-    animation: loading-ring-spin infinite 20s linear;
-  }
-}
-
-@keyframes loading-ring-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
   }
 }
