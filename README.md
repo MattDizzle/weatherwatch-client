@@ -14,7 +14,8 @@ VERCEL
 
 Node.js
 
-#### Powered by openweathermap.org API
+#### Powered by the
+openweathermap.org API
 
 ##### Live Link:
 
