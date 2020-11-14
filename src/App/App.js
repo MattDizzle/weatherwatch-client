@@ -148,6 +148,7 @@ export default class App extends Component {
             {temp ? (
               <section className="temp-box">
                 <div className="temp-box-top">
+                  <div>
                   <h3>
                     {Math.round(temp)}
                     <span>°F</span>
@@ -155,6 +156,8 @@ export default class App extends Component {
                     {Math.round((5 / 9) * (temp - 32))}
                     <span>℃</span>
                   </h3>
+                  </div >
+                  <h4>Current Temperature</h4>
                 </div>
 
                 <div className="sub-temps">

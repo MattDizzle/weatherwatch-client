@@ -33,6 +33,11 @@ h3 > span {
   font-size: 2rem;
 }
 
+h4 {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
 .temp-box-top > span {
   font-size: 2rem;
   
@@ -69,7 +74,7 @@ form{
 
 .temp-box-top {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   background-color: #2c0055;
   align-self: center;
   justify-self: center;
