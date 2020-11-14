@@ -251,8 +251,11 @@ export default class App extends Component {
               {this.state.province.touched && (
                 <ValidationError message={provinceError} />
               )}
-              <button type="submit" className="btn" disabled={this.validateCity() ||
-                  this.validateProvince() }>
+              <button
+                type="submit"
+                className="btn"
+                disabled={this.validateCity() || this.validateProvince()}
+              >
                 <span>Submit</span>
               </button>
             </form>
@@ -273,9 +276,7 @@ export default class App extends Component {
               <button
                 type="submit"
                 className="btn"
-                disabled={
-                  this.validateZipcode()
-                }
+                disabled={this.validateZipcode()}
               >
                 <span>Submit</span>
               </button>
