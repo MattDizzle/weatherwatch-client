@@ -29,6 +29,10 @@ h3 {
   font-size: 3rem;
 }
 
+h3 > span {
+  font-size: 2rem;
+}
+
 .temp-box-top > span {
   font-size: 2rem;
   
@@ -134,6 +138,10 @@ main {
   
   h3 {
     font-size: 6rem;
+  }
+
+  h3 > span {
+    font-size: 4rem;
   }
 
   form {
