@@ -204,7 +204,7 @@ export default class App extends Component {
                 </div>
 
                 <div className="sub-temps">
-                  Humidity: {humidity} Wind: {speed}
+                  Humidity: {humidity} <span>%</span> Wind: {speed}
                   <span>mph</span>
                 </div>
 
