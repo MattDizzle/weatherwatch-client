@@ -139,7 +139,7 @@ export default class App extends Component {
 
             {temp ? (
               <p>
-                Longitude:<span>{lon}</span> | Latitude:<span>{lat}</span>
+                Longitude:<span>{lon}</span> Latitude:<span>{lat}</span>
               </p>
             ) : (
               ""
@@ -148,26 +148,29 @@ export default class App extends Component {
             {temp ? (
               <section className="temp-box">
                 <div className="temp-box-top">
-                  <h3>{Math.round(temp)}</h3>
-                  <span>°F</span>
-                  <h3> | {Math.round((5 / 9) * (temp - 32))}</h3>
-                  <span>℃</span>
+                  <h3>
+                    {Math.round(temp)}
+                    <span>°F</span>
+                    {"  "}
+                    {Math.round((5 / 9) * (temp - 32))}
+                    <span>℃</span>
+                  </h3>
                 </div>
 
                 <div className="sub-temps">
-                  Forecast: {description}| Wind: {speed}
+                  Forecast: {description} Wind: {speed}
                   <span>mph</span>
                 </div>
 
                 <div className="sub-temps">
                   Min Temp: {Math.round(temp_min)}
-                  <span>°F</span>| Max Temp: {Math.round(temp_max)}
+                  <span>°F</span> Max Temp: {Math.round(temp_max)}
                   <span>°F</span>
                 </div>
 
                 <div className="sub-temps">
                   Feels like: {Math.round(feels_like)}
-                  <span>°F</span>| Country:<span>{country}</span>
+                  <span>°F</span> Country:<span>{country}</span>
                 </div>
               </section>
             ) : (
