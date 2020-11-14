@@ -76,10 +76,12 @@ form{
 }
 
 input {
+  font-size: 2rem;
   border-radius: 15px;
   margin-top: 5px;
   background-color: #fff6a85e;
   min-height: 5vh;
+  padding: 0 20px;
 }
 
 label {
@@ -168,7 +170,7 @@ main {
     margin-left: 1vw;
   }
 
-  .hero-pic{
+  .hero-pic {
     width: 100%;
     padding: 20px;
     display: flex;  

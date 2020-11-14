@@ -3,8 +3,6 @@ import "./button.css";
 import "./App.css";
 import logo from "../images/weather-watch-logo.png";
 import hero from "../images/weather-watch-logo.png";
-import moment from "moment";
-moment().format();
 
 export default class App extends Component {
   constructor(props) {
@@ -60,8 +58,8 @@ export default class App extends Component {
     };
   }
 
-  updateCity(user_email) {
-    this.setState({ city: { value: user_email, touched: true } });
+  updateCity(city) {
+    this.setState({ city: { value: city, touched: true } });
   }
 
   updateProvince(province) {
@@ -118,26 +116,30 @@ export default class App extends Component {
       feels_like,
       temp_min,
       temp_max,
-      pressure,
       humidity,
     } = this.state.data.main;
     const { lon, lat } = this.state.data.coord;
-    const { main, description, icon } = this.state.data.weather[0];
+    const { description, icon } = this.state.data.weather[0];
     const { speed, deg, gust } = this.state.data.wind;
-    const { country, sunrise, sunset } = this.state.data.sys;
-    // console.log(moment(sunrise).hours() + ":" + moment(sunrise).minutes());
-    console.log(sunrise, description);
+    const { country } = this.state.data.sys;
+
     return (
-      <div className="App ">
+      <div className="App">
         <header>
           <img src={logo} alt="Logo" className="logo" />
         </header>
 
         <main>
-          <div className="half">
+          <section className="half">
             <h1>{this.state.data.name}</h1>
+            <p>
+              Longitude:<span>{lon}</span>
+            </p>
+            <p>
+              Latitude:<span>{lat}</span>
+            </p>
             {temp ? (
-              <div className="temp-box ">
+              <section className="temp-box">
                 <div className="temp-box-top">
                   <h3>{Math.round(temp)}</h3>
                   <span>°F</span>
@@ -152,8 +154,7 @@ export default class App extends Component {
 
                 <div className="sub-temps">
                   Min Temp: {Math.round(temp_min)}
-                  <span>°F</span>
-                  | Max Temp: {Math.round(temp_max)}
+                  <span>°F</span>| Max Temp: {Math.round(temp_max)}
                   <span>°F</span>
                 </div>
 
@@ -161,15 +162,15 @@ export default class App extends Component {
                   Feels like: {Math.round(feels_like)}
                   <span>°F</span>| Country:<span>{country}</span>
                 </div>
-              </div>
+              </section>
             ) : (
               <div>
                 <img src={hero} alt="hero-pic" className="hero-pic" />
               </div>
             )}
-          </div>
+          </section>
 
-          <div className="half">
+          <section className="half">
             <form onSubmit={this.getDataByCityAndState}>
               <label>Enter a city </label>
               <input
@@ -178,7 +179,7 @@ export default class App extends Component {
                 type="text"
                 onChange={(e) => this.updateCity(e.target.value)}
               />
-              <label htmlFor='prov'>and State/Province</label>
+              <label htmlFor="prov">and State/Province</label>
               <input
                 id="prov"
                 name="prov"
@@ -186,12 +187,12 @@ export default class App extends Component {
                 onChange={(e) => this.updateProvince(e.target.value)}
               />
               <button type="submit" className="btn">
-              <span>Submit</span> 
+                <span>Submit</span>
               </button>
             </form>
 
             <form onSubmit={this.getDataByZip}>
-              <label htmlFor='zip'>or zipcode </label>
+              <label htmlFor="zip">or zipcode </label>
               <input
                 id="zip"
                 name="zip"
@@ -200,10 +201,10 @@ export default class App extends Component {
               />
 
               <button type="submit" className="btn">
-              <span>Submit</span> 
+                <span>Submit</span>
               </button>
             </form>
-          </div>
+          </section>
         </main>
       </div>
     );
