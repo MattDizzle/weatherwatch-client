@@ -123,9 +123,10 @@ export default class App extends Component {
   render() {
     const { temp, feels_like, temp_min, temp_max } = this.state.data.main;
     const { lon, lat } = this.state.data.coord;
-    const { description } = this.state.data.weather[0];
+    const { description, icon } = this.state.data.weather[0];
     const { speed } = this.state.data.wind;
     const { country } = this.state.data.sys;
+    const iconString = `http://openweathermap.org/img/wn/${icon}.png`
 
     return (
       <div className="App">
@@ -148,6 +149,8 @@ export default class App extends Component {
             {temp ? (
               <section className="temp-box">
                 <div className="temp-box-top">
+                  <img src={iconString} className='weather-pic' />
+                  <span>{description}</span>
                   <div>
                     <h3>
                       {Math.round(temp)}
