@@ -80,7 +80,6 @@ form{
   justify-self: center;
   justify-content: center;
   border-radius: 15px;
-  width: 95%;
   padding: 30px;
   padding-top: 0;
 }
@@ -132,10 +131,7 @@ main {
 .weather-pic {
   width: 50%;
   align-self: center;
-  position: relative;
-  bottom: -5vh;
-  margin-top: 0;
-  background-clip: content-box;
+  clip-path: circle(50%);
 }
 
 .icon-box {
