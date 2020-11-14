@@ -54,6 +54,7 @@ export default class CityForm extends Component {
               <button
                 type="submit"
                 className="btn"
+                disabled={this.validateCity()}
               >
                 <span>Submit</span>
               </button>

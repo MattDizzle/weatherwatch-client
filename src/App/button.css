@@ -19,7 +19,7 @@
 
 
 button[type="submit"]:disabled {
-  background: #2c70ee;
+  background: #4a008f;
 }
 
 button[type="submit"]:disabled > span {

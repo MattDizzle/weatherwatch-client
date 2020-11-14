@@ -33,6 +33,7 @@ export default class ZipForm extends Component {
             <button
               type="submit"
               className="btn"
+              disabled={this.validateZipcode()}
             >
               <span>Submit</span>
             </button>
