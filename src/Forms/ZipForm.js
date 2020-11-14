@@ -7,7 +7,6 @@ export default class ZipForm extends Component {
 
     validateZipcode() {
       const zipcode = parseInt(this.context.zipcode.value);
-      console.log(zipcode, typeof(parseInt(zipcode)))
       if (zipcode.toString().length < 5) {
         return "Zip code must be at least 5 numbers long";
       } 

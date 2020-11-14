@@ -6,7 +6,6 @@ export default class Main extends Component {
     static contextType = CurrentContext;
 
   render() {
-    console.log("from Main:", this.context);
     const {
         temp,
         feels_like,
@@ -19,7 +18,6 @@ export default class Main extends Component {
       const { speed } = this.context.data.wind;
       const { country } = this.context.data.sys;
       const iconString = `http://openweathermap.org/img/wn/${icon}.png`;
-      console.log("from Main 2:", this.context);
     return (
         <section className="half">
           <h1>{this.context.data.name}</h1>
@@ -36,7 +34,7 @@ export default class Main extends Component {
             <section className="temp-box">
               <div className="temp-box-top">
                 <div className="icon-box">
-                  <img src={iconString} className="weather-pic" />
+                  <img src={iconString} className="weather-pic" alt='weather-watch-logo' />
                   <span>{description}</span>
                 </div>
                 <div>
@@ -69,7 +67,7 @@ export default class Main extends Component {
             </section>
           ) : (
             <div>
-              <img src={hero} alt="hero-pic" className="hero-pic" />
+              <img src={hero} className="hero-pic" alt='weather-watch-logo-hero-pic' />
             </div>
           )}
         </section>
