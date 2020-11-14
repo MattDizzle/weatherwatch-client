@@ -3,6 +3,7 @@ import "./button.css";
 import "./App.css";
 import logo from "../images/weather-watch-logo.png";
 import hero from "../images/weather-watch-logo.png";
+import ValidationError from "../ValidationError";
 
 export default class App extends Component {
   constructor(props) {
@@ -73,6 +74,7 @@ export default class App extends Component {
   getDataByCityAndState = (ev) => {
     ev.preventDefault();
     const { city, prov } = ev.target;
+
     fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${city.value},${prov.value}&appid=d1af8402c8f946b3ad0e892bbf7749b4&units=imperial`
     )
@@ -120,6 +122,33 @@ export default class App extends Component {
       });
   };
 
+  validateCity() {
+    const city = this.state.city.value.trim();
+    if (city.length === 0) {
+      return "City is required";
+    } else if (city.length < 3) {
+      return "City must be at least 3 characters long";
+    }
+  }
+
+  validateProvince() {
+    const province = this.state.province.value.trim();
+    if (province.length === 0) {
+      return "State/Province Invalid";
+    } else if (province.length < 3) {
+      return "State/Province must be at least 3 characters long";
+    }
+  }
+
+  validateZipcode() {
+    const zipcode = this.state.zipcode.value.trim();
+    if (zipcode.length === 0) {
+      return "Zip code Invalid";
+    } else if (zipcode.length < 3) {
+      return "Zip code must be at least 3 characters long";
+    }
+  }
+
   render() {
     const {
       temp,
@@ -133,6 +162,9 @@ export default class App extends Component {
     const { speed } = this.state.data.wind;
     const { country } = this.state.data.sys;
     const iconString = `http://openweathermap.org/img/wn/${icon}.png`;
+    const cityError = this.validateCity();
+    const provinceError = this.validateProvince();
+    const zipError = this.validateZipcode();
 
     return (
       <div className="App">
@@ -204,6 +236,10 @@ export default class App extends Component {
                 required
                 onChange={(e) => this.updateCity(e.target.value)}
               />
+              {/* <ValidationError message={cityError} /> */}
+              {this.state.city.touched && (
+                <ValidationError message={cityError} />
+              )}
               <label htmlFor="prov">and State/Province</label>
               <input
                 id="prov"
@@ -211,6 +247,10 @@ export default class App extends Component {
                 type="text"
                 onChange={(e) => this.updateProvince(e.target.value)}
               />
+              {/* <ValidationError message={provinceError} /> */}
+              {this.state.province.touched && (
+                <ValidationError message={provinceError} />
+              )}
               <button type="submit" className="btn">
                 <span>Submit</span>
               </button>
@@ -225,8 +265,19 @@ export default class App extends Component {
                 required
                 onChange={(e) => this.updateZipcode(e.target.value)}
               />
+              {this.state.zipcode.touched && (
+                <ValidationError message={zipError} />
+              )}
 
-              <button type="submit" className="btn">
+              <button
+                type="submit"
+                className="btn"
+                disabled={
+                  this.validateCity() ||
+                  this.validateProvince() ||
+                  this.validateZipcode()
+                }
+              >
                 <span>Submit</span>
               </button>
             </form>
