@@ -129,7 +129,8 @@ main {
 }
 
 .weather-pic {
-  width: 100%;
+  width: 50%;
+  align-self: center;
 }
 
 @media only screen and (min-width: 990px) {
