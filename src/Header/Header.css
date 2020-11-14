@@ -12,11 +12,4 @@ header {
         width: 15%;
         align-self: left;
     }
-
-    header {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        padding: 0 5vw;
-    }
 }

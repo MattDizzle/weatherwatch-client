@@ -6,12 +6,11 @@ export default class ZipForm extends Component {
     static contextType = CurrentContext;
 
     validateZipcode() {
-      const zipcode = this.context.zipcode.value.trim();
-      if (zipcode.length === 0) {
-        return "Zip code Invalid";
-      } else if (zipcode.length < 5) {
-        return "Zip code must be at least 5 characters long";
-      }
+      const zipcode = parseInt(this.context.zipcode.value);
+      console.log(zipcode, typeof(parseInt(zipcode)))
+      if (zipcode.toString().length < 5) {
+        return "Zip code must be at least 5 numbers long";
+      } 
     }
     render() {
         const { getDataByZip, updateZipcode } = this.context;
@@ -19,11 +18,12 @@ export default class ZipForm extends Component {
         const zipError = this.validateZipcode();
         return (
           <form onSubmit={getDataByZip}>
-            <label htmlFor="zip">or Zip Code </label>
+            <label htmlFor="zip">Enter a Zip Code </label>
             <input
               id="zip"
               name="zip"
               type="text"
+              pattern="[0-9]*"
               required
               onChange={(e) => updateZipcode(e.target.value)}
             />

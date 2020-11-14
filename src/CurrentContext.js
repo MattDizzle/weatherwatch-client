@@ -50,7 +50,7 @@ export default class CurrentContextProvider extends Component {
     },
     city: { value: "", touched: false },
     province: { value: "", touched: false },
-    zipcode: { value: "", touched: false },
+    zipcode: { value: 0, touched: false },
   };
 
   setContext = (obj) => {
@@ -58,7 +58,7 @@ export default class CurrentContextProvider extends Component {
   }
 
   updateZipcode = (zipcode) => {
-    this.setState({ zipcode: { value: zipcode, touched: true } });
+      this.setState({ zipcode: { value: zipcode, touched: true } });
   }
 
   updateCity = (city) => {
