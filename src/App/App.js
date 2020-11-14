@@ -84,6 +84,11 @@ export default class App extends Component {
       })
       .then((res) => {
         this.setState({ data: res });
+        window.scroll({
+          top: 100,
+          left: 100,
+          behavior: "smooth",
+        });
       })
       .catch((err) => {
         console.log(err);
@@ -104,6 +109,11 @@ export default class App extends Component {
       })
       .then((res) => {
         this.setState({ data: res });
+        window.scroll({
+          top: 100,
+          left: 100,
+          behavior: "smooth",
+        });
       })
       .catch((err) => {
         console.log(err);
