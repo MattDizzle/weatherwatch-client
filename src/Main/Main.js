@@ -24,7 +24,7 @@ export default class Main extends Component {
 
           {temp ? (
             <p>
-              Longitude:<span>{lon}</span> Latitude:<span>{lat}</span>
+              Longitude:<span>{lon}°</span> Latitude:<span>{lat}°</span>
             </p>
           ) : (
             ""
