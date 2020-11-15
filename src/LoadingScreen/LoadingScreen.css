@@ -1,0 +1,59 @@
+.ring {
+    width: 80vw;
+    pointer-events: none;
+  }
+
+  .loading-box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+  }
+
+  .loading-box > span {
+      font-size: 2rem;
+      position: absolute;
+      
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .ring {
+      animation: ring-spin infinite 20s linear;
+      
+    }
+
+    .loading-box {
+        animation: color-change 2s infinite 500ms;
+    }
+  }
+  
+  @keyframes ring-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes color-change {
+    from {background-color: #594796;}
+    to {background-color: #2c0055;}
+  }
+
+  @media only screen and (min-width: 990px) {
+    .ring {
+        width: 20vw;
+        pointer-events: none;
+      }
+    
+      .loading-box {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+      }
+
+
+  }

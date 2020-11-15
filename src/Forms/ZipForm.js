@@ -12,11 +12,11 @@ export default class ZipForm extends Component {
       } 
     }
     render() {
-        const { getDataByZip, updateZipcode } = this.context;
+        const { getDataByZip, updateZipcode, toggleLoadingTrue } = this.context;
         const { zipcode } = this.context
         const zipError = this.validateZipcode();
         return (
-          <form onSubmit={getDataByZip}>
+          <form onSubmit={toggleLoadingTrue, getDataByZip}>
             <label htmlFor="zip">Enter a Zip Code </label>
             <input
               id="zip"

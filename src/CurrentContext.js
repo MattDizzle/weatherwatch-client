@@ -51,23 +51,34 @@ export default class CurrentContextProvider extends Component {
     city: { value: "", touched: false },
     province: { value: "", touched: false },
     zipcode: { value: 0, touched: false },
+    loading: true,
+  };
+
+  toggleLoading = () => {
+    console.log("loading false");
+    this.setState({ loading: false });
+  };
+
+  toggleLoadingTrue = () => {
+    console.log("loading true");
+    this.setState({ loading: true });
   };
 
   setContext = (obj) => {
-    this.setState(obj)
-  }
+    this.setState(obj);
+  };
 
   updateZipcode = (zipcode) => {
-      this.setState({ zipcode: { value: zipcode, touched: true } });
-  }
+    this.setState({ zipcode: { value: zipcode, touched: true } });
+  };
 
   updateCity = (city) => {
     this.setState({ city: { value: city, touched: true } });
-  }
+  };
 
   updateProvince = (province) => {
     this.setState({ province: { value: province, touched: true } });
-  }
+  };
 
   getDataByCityAndState = (ev) => {
     ev.preventDefault();
@@ -121,14 +132,19 @@ export default class CurrentContextProvider extends Component {
 
   render() {
     return (
-      <CurrentContext.Provider value={{ ...this.state,
-       setContext: this.setContext,
-        updateZipcode: this.updateZipcode,
-        updateCity: this.updateCity,
-        updateProvince: this.updateProvince,
-        getDataByZip: this.getDataByZip,
-        getDataByCityAndState: this.getDataByCityAndState
-      }}>
+      <CurrentContext.Provider
+        value={{
+          ...this.state,
+          setContext: this.setContext,
+          updateZipcode: this.updateZipcode,
+          updateCity: this.updateCity,
+          updateProvince: this.updateProvince,
+          getDataByZip: this.getDataByZip,
+          getDataByCityAndState: this.getDataByCityAndState,
+          toggleLoading: this.toggleLoading,
+          toggleLoadingTrue: this.toggleLoadingTrue,
+        }}
+      >
         {this.props.children}
       </CurrentContext.Provider>
     );
