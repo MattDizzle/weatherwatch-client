@@ -27,7 +27,7 @@ export default class App extends Component {
               <main>
                 <Main />
                 <section className="half">
-                <button className='btn' onClick={toggleZip}><span>{searchByZip ? "Search by City, State" : "Search by Zipcode" }</span></button>
+                <button className='btn toggler' onClick={toggleZip}><span>{searchByZip ? "Search by City, State" : "Search by Zipcode" }</span></button>
                   {searchByZip ? <ZipForm /> : <></>}
                   {!searchByZip ? <CityForm /> : <></>}
                 </section>

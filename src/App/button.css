@@ -37,7 +37,7 @@ button[type="submit"]:disabled > span {
   box-shadow: 0px 0px 36px #ffc62a;
 }
 
-button > span {
+.btn > span {
   text-align: center;
   font-family: 'Nova Square', cursive;
   font-size: 35px;
@@ -46,6 +46,10 @@ button > span {
   background: -webkit-linear-gradient(#ffdc2a, #fb2182);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.toggler > span {
+  font-size: 20px;
 }
 
 span {
@@ -59,5 +63,8 @@ span {
   align-self: end;
 }
     
-
-
+@media only screen and (min-width: 990px) {
+    .toggler > span {
+    font-size: 35px;
+    }
+}
