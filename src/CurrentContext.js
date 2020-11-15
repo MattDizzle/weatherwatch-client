@@ -1,7 +1,6 @@
 import React, { createContext, Component } from "react";
 
 export const CurrentContext = createContext();
-
 export default class CurrentContextProvider extends Component {
   state = {
     data: {
@@ -58,10 +57,6 @@ export default class CurrentContextProvider extends Component {
     this.setState({ loading: false });
   };
 
-  toggleLoadingTrue = () => {
-    this.setState({ loading: true });
-  };
-
   setContext = (obj) => {
     this.setState(obj);
   };
@@ -80,6 +75,7 @@ export default class CurrentContextProvider extends Component {
 
   getDataByCityAndState = (ev) => {
     ev.preventDefault();
+    this.setState({loading: !this.state.loading})
     const { city, prov } = ev.target;
     fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${city.value},${prov.value}&appid=d1af8402c8f946b3ad0e892bbf7749b4&units=imperial`
@@ -105,6 +101,7 @@ export default class CurrentContextProvider extends Component {
 
   getDataByZip = (ev) => {
     ev.preventDefault();
+    this.setState({loading: !this.state.loading})
     const { zip } = ev.target;
     fetch(
       `https://api.openweathermap.org/data/2.5/weather?zip=${zip.value}&appid=d1af8402c8f946b3ad0e892bbf7749b4&units=imperial`
@@ -139,8 +136,7 @@ export default class CurrentContextProvider extends Component {
           updateProvince: this.updateProvince,
           getDataByZip: this.getDataByZip,
           getDataByCityAndState: this.getDataByCityAndState,
-          toggleLoading: this.toggleLoading,
-          toggleLoadingTrue: this.toggleLoadingTrue,
+          toggleLoading: this.toggleLoading
         }}
       >
         {this.props.children}

@@ -11,12 +11,13 @@ export default class ZipForm extends Component {
         return "Zip code must be at least 5 numbers long";
       } 
     }
+
     render() {
-        const { getDataByZip, updateZipcode, toggleLoadingTrue } = this.context;
+        const { getDataByZip, updateZipcode} = this.context;
         const { zipcode } = this.context
         const zipError = this.validateZipcode();
         return (
-          <form onSubmit={toggleLoadingTrue, getDataByZip}>
+          <form onSubmit={getDataByZip}>
             <label htmlFor="zip">Enter a Zip Code </label>
             <input
               id="zip"

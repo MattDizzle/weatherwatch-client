@@ -25,11 +25,11 @@ export default class CityForm extends Component {
       }
 
     render() {
-        const { getDataByCityAndState, updateCity, updateProvince, city, province, toggleLoadingTrue } = this.context;
+        const { getDataByCityAndState, updateCity, updateProvince, city, province} = this.context;
         const cityError = this.validateCity();
         const provinceError = this.validateProvince();
         return (
-            <form onSubmit={toggleLoadingTrue, getDataByCityAndState}>
+            <form onSubmit={getDataByCityAndState}>
               <label htmlFor="city">Enter a City </label>
               <input
                 id="city"

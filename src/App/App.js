@@ -12,12 +12,13 @@ export default class App extends Component {
 
   render() {
     const {toggleLoading, loading } = this.context;
-    setTimeout(
-              toggleLoading
-            , 3000);
-    
-    setTimeout(clearTimeout(), 5000)
-            
+    const timer = setTimeout(toggleLoading, 3000);
+    if(loading === true){
+      setTimeout(toggleLoading, 3000);
+    }
+    if(loading === false){
+      clearTimeout(timer)
+    }
     return (
       <>
         {loading === false ? (
