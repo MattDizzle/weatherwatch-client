@@ -26,7 +26,7 @@ export default class App extends Component {
               <Header />
               <main>
                 <Main />
-                <section className="half">
+                <section className="half animate__animated animate__zoomIn">
                 <button className='btn toggler' onClick={toggleZip}><span>{searchByZip ? "Search by City, State" : "Search by Zipcode" }</span></button>
                   {searchByZip ? <ZipForm /> : <></>}
                   {!searchByZip ? <CityForm /> : <></>}

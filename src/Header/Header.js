@@ -7,7 +7,7 @@ export default class Header extends Component {
   static contextType = CurrentContext;
   render() {
     return (
-      <header>
+      <header className='animate__animated animate__slideInDown'>
         <img src={logo} alt="Logo" className="logo" />
       </header>
     );

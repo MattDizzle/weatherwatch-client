@@ -19,7 +19,7 @@ export default class Main extends Component {
     const { country } = this.context.data.sys;
     const iconString = `http://openweathermap.org/img/wn/${icon}.png`;
     return (
-      <section className="half">
+      <section className="half animate__animated animate__zoomIn">
         <h1>{this.context.data.name}</h1>
 
         {temp ? (
@@ -31,7 +31,7 @@ export default class Main extends Component {
         )}
 
         {temp ? (
-          <section className="temp-box">
+          <section className="temp-box ">
             <div className="temp-box-top">
               <div className="icon-box">
                 <img
@@ -70,7 +70,7 @@ export default class Main extends Component {
             </div>
           </section>
         ) : (
-          <div className="placeholder">
+          <div className='placeholder animate__animated animate__zoomIn'>
             <img
               src="https://source.unsplash.com/collection/1459961/1600x900"
               className="hero-pic"

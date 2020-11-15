@@ -29,7 +29,7 @@ export default class CityForm extends Component {
         const cityError = this.validateCity();
         const provinceError = this.validateProvince();
         return (
-            <form onSubmit={getDataByCityAndState}>
+            <form onSubmit={getDataByCityAndState} className='animate__animated animate__zoomIn'>
               <label htmlFor="city">Enter a City </label>
               <input
                 id="city"

@@ -17,7 +17,7 @@ export default class ZipForm extends Component {
         const { zipcode } = this.context
         const zipError = this.validateZipcode();
         return (
-          <form onSubmit={getDataByZip}>
+          <form onSubmit={getDataByZip} className='animate__animated animate__zoomIn'>
             <label htmlFor="zip">Enter a Zip Code </label>
             <input
               id="zip"
