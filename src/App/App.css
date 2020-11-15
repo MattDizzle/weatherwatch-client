@@ -21,8 +21,6 @@
 
 }
 
-
-
 h1 {
   font-size: 3rem;
   margin-bottom: 5px;
@@ -204,5 +202,22 @@ main {
     width: 100%;
     padding: 20px;
     display: flex;  
+  }
+
+  .placeholder {
+    background: linear-gradient(#9900ff9f, #660066a4);
+  }
+
+  .placeholder:hover {
+    background: linear-gradient(#660066a4, #9900ff9f);
+  }
+
+  .placeholder > img {
+    clip-path: circle(40% at center);
+    transition: clip-path 2s;
+  }
+
+  .placeholder > img:hover {
+    clip-path: circle(100% at center);
   }
 }

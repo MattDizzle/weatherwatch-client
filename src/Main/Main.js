@@ -66,8 +66,8 @@ export default class Main extends Component {
               </div>
             </section>
           ) : (
-            <div>
-              <img src={hero} className="hero-pic" alt='weather-watch-logo-hero-pic' />
+            <div className='placeholder'>
+              <img src='https://source.unsplash.com/collection/1459961/1600x900' className="hero-pic" alt='weather-watch-logo-hero-pic' />
             </div>
           )}
         </section>
