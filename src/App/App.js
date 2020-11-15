@@ -11,7 +11,7 @@ export default class App extends Component {
   static contextType = CurrentContext;
 
   render() {
-    const {toggleLoading, loading } = this.context;
+    const { toggleZip,toggleLoading, loading, searchByZip } = this.context;
     const timer = setTimeout(toggleLoading, 3000);
     if(loading === true){
       setTimeout(toggleLoading, 3000);
@@ -27,8 +27,9 @@ export default class App extends Component {
               <main>
                 <Main />
                 <section className="half">
-                  <ZipForm />
-                  <CityForm />
+                <button className='btn' onClick={toggleZip}><span>{searchByZip ? "Search by City, State" : "Search by Zipcode" }</span></button>
+                  {searchByZip ? <ZipForm /> : <></>}
+                  {!searchByZip ? <CityForm /> : <></>}
                 </section>
               </main>
            

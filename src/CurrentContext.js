@@ -51,6 +51,11 @@ export default class CurrentContextProvider extends Component {
     province: { value: "", touched: false },
     zipcode: { value: 0, touched: false },
     loading: true,
+    searchByZip: true
+  };
+
+  toggleZip = () => {
+    this.setState({ searchByZip: !this.state.searchByZip });
   };
 
   toggleLoading = () => {
@@ -136,7 +141,8 @@ export default class CurrentContextProvider extends Component {
           updateProvince: this.updateProvince,
           getDataByZip: this.getDataByZip,
           getDataByCityAndState: this.getDataByCityAndState,
-          toggleLoading: this.toggleLoading
+          toggleLoading: this.toggleLoading,
+          toggleZip: this.toggleZip
         }}
       >
         {this.props.children}
