@@ -11,14 +11,16 @@ export default class App extends Component {
   static contextType = CurrentContext;
 
   render() {
-    const {toggleLoading } = this.context;
+    const {toggleLoading, loading } = this.context;
     setTimeout(
               toggleLoading
             , 3000);
-            clearTimeout()
+    
+    setTimeout(clearTimeout(), 5000)
+            
     return (
       <>
-        {this.context.loading === false ? (
+        {loading === false ? (
             <div className="App">
               <Header />
               <main>

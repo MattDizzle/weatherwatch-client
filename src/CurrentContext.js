@@ -55,12 +55,10 @@ export default class CurrentContextProvider extends Component {
   };
 
   toggleLoading = () => {
-    console.log("loading false");
     this.setState({ loading: false });
   };
 
   toggleLoadingTrue = () => {
-    console.log("loading true");
     this.setState({ loading: true });
   };
 
