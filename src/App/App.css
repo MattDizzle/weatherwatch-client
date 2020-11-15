@@ -96,7 +96,8 @@ input {
   margin-top: 5px;
   background-color: #fff6a85e;
   min-height: 5vh;
-  padding: 0 20px;
+  padding: 5px;
+  text-align: center;
 }
 
 label {
