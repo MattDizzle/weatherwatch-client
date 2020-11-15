@@ -39,6 +39,8 @@ h4 {
 
 p {
   font-size: 1rem;
+  -webkit-text-stroke-width: 0.7px;
+  -webkit-text-stroke-color: black;
 }
 
 .temp-box-top > span {
