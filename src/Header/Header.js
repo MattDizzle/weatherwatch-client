@@ -8,7 +8,7 @@ export default class Header extends Component {
   render() {
     return (
       <header className='animate__animated animate__slideInDown'>
-        <img src={logo} alt="Logo" className="logo" />
+     <a href='https://weatherwatch.club/'><img src={logo} alt="Logo" className="logo" /></a> 
       </header>
     );
   }
