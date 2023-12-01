@@ -13,7 +13,6 @@ export default class Main extends Component {
       temp_max,
       humidity,
     } = this.context.data.main;
-    const { lon, lat } = this.context.data.coord;
     const { description, icon } = this.context.data.weather[0];
     const { speed } = this.context.data.wind;
     const { country } = this.context.data.sys;
