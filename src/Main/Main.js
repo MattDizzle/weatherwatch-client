@@ -23,14 +23,6 @@ export default class Main extends Component {
         <h1>{this.context.data.name}</h1>
 
         {temp ? (
-          <p>
-            Longitude:<span>{lon}°</span> Latitude:<span>{lat}°</span>
-          </p>
-        ) : (
-          ""
-        )}
-
-        {temp ? (
           <section className="temp-box ">
             <div className="temp-box-top">
               <div className="icon-box">
