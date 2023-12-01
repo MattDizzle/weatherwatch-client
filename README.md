@@ -19,7 +19,7 @@ openweathermap.org API
 
 ##### Live Link:
 
-https://weatherwatch.club/
+https://weatherwatch-client.vercel.app/
 
 ##### Github Link:
 
